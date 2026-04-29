@@ -49,7 +49,7 @@ function SiteHeader() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
           <span className="text-sm tracking-[0.3em] font-bold text-white">
-            SENTINEL<span className="text-cyan-400">:</span>OC
+            SENTINEL<span className="text-sky-400">:</span>OC
           </span>
         </Link>
         <nav className="flex items-center gap-6 text-xs tracking-widest text-slate-400">
@@ -66,7 +66,7 @@ function SiteHeader() {
           </a>
           <a
             href="https://db.sentineloc.io/signup?plan=investigator"
-            className="px-4 py-2 text-xs tracking-widest font-bold rounded bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 hover:bg-cyan-400/20 transition-colors"
+            className="px-4 py-2 text-xs tracking-widest font-bold rounded bg-sky-400/10 border border-sky-400/30 text-sky-300 hover:bg-sky-400/20 transition-colors"
           >
             START — $79/MO
           </a>
@@ -82,7 +82,7 @@ function SiteFooter() {
       <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
         <div>
           <div className="tracking-[0.3em] font-bold text-white mb-3">
-            SENTINEL<span className="text-cyan-400">:</span>OC
+            SENTINEL<span className="text-sky-400">:</span>OC
           </div>
           <p className="text-slate-500 leading-relaxed">
             OSINT workspace for investigative journalists. Built by one.

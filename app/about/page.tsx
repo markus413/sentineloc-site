@@ -12,7 +12,7 @@ export default function About() {
     <>
       <section className="border-b border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-6 py-20">
-          <div className="text-xs tracking-[0.4em] text-cyan-400 mb-4 font-bold">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
             ABOUT
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">

@@ -17,7 +17,7 @@ export default function Pricing() {
     <>
       <section className="border-b border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <div className="text-xs tracking-[0.4em] text-cyan-400 mb-4 font-bold">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
             PRICING
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -70,7 +70,7 @@ export default function Pricing() {
           <p className="text-xs text-slate-500 font-sans">
             Annual prepay: 20% discount on either plan. Larger newsrooms
             (10+ seats):{" "}
-            <Link href="/about/" className="text-cyan-400 hover:underline">
+            <Link href="/about/" className="text-sky-400 hover:underline">
               contact us
             </Link>
             .
@@ -248,16 +248,16 @@ function PlanCard({
       className={
         "border rounded p-8 " +
         (featured
-          ? "border-cyan-400/40 bg-cyan-400/[0.04]"
+          ? "border-sky-400/40 bg-sky-400/[0.04]"
           : "border-white/[0.08] bg-white/[0.015]")
       }
     >
       <div className="flex items-baseline gap-3 mb-2">
-        <div className="text-xs tracking-[0.3em] font-bold text-cyan-400">
+        <div className="text-xs tracking-[0.3em] font-bold text-sky-400">
           {name.toUpperCase()}
         </div>
         {featured && (
-          <span className="text-[9px] tracking-widest text-cyan-300 font-bold">
+          <span className="text-[9px] tracking-widest text-sky-300 font-bold">
             ★ MOST COMMON
           </span>
         )}
@@ -270,7 +270,7 @@ function PlanCard({
       <ul className="space-y-3 mb-8 font-sans">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
-            <span className="text-cyan-400 mt-0.5">✓</span>
+            <span className="text-sky-400 mt-0.5">✓</span>
             <span>{f}</span>
           </li>
         ))}
@@ -280,7 +280,7 @@ function PlanCard({
         className={
           "block text-center px-6 py-3 text-sm tracking-widest font-bold rounded transition-colors " +
           (featured
-            ? "bg-cyan-400 text-[#06090f] hover:bg-cyan-300"
+            ? "bg-sky-400 text-[#06090f] hover:bg-sky-300"
             : "border border-white/15 text-slate-300 hover:bg-white/5")
         }
       >

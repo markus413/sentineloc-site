@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-/* Always-dark site — no light-mode override. The brand is operations-
-   center aesthetic; a light theme would dilute that signal. */
+/* Always-dark site — operations-center aesthetic. Deeper bg than v1
+   for stronger text/bg contrast (matches DevShield-style cyber sites). */
 :root {
-  --background: #06090f;
+  --background: #04070d;
   --foreground: #e2e8f0;
-  --accent-cyan: #22d3ee;
+  --accent-cyan: #0ea5e9;
+  --accent-cyan-bright: #67e8f9;
   --accent-emerald: #34d399;
   --accent-amber: #fbbf24;
 }
@@ -23,17 +24,98 @@ body {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-/* A subtle scanline / grid background motif used on hero sections.
-   Apply via `bg-grid` class. Keeps the dark canvas from feeling flat. */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(14, 165, 233, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-/* Single sweep line — same motif as the Sentinel app's module headers,
-   reused for cross-product visual consistency. */
+/* Hex pattern background (cybersec template staple) */
+.bg-hex {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'><path d='M28 0L56 16.18V49.82L28 66 0 49.82V16.18z M28 50L56 66.18V99.82L28 116 0 99.82V66.18z' fill='none' stroke='%230ea5e9' stroke-opacity='0.04' stroke-width='1'/></svg>");
+}
+
+/* Hero ambient gradient */
+.hero-bg {
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14, 165, 233, 0.16), transparent 70%),
+    radial-gradient(ellipse 60% 80% at 100% 50%, rgba(8, 47, 73, 0.55), transparent 60%),
+    linear-gradient(180deg, #0a1620 0%, #04070d 100%);
+}
+
+/* True-3D rotating globe */
+@keyframes globe-3d-rotate {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.globe-3d-spin {
+  animation: globe-3d-rotate 32s linear infinite;
+  transform-style: preserve-3d;
+}
+.globe-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: #0ea5e9;
+  box-shadow: 0 0 5px rgba(14, 165, 233, 0.7);
+  backface-visibility: visible;
+}
+
+/* Radar pulse rings — sweep page-wide */
+@keyframes ring-pulse {
+  0%   { transform: scale(0.4); opacity: 0; }
+  8%   { opacity: 0.55; }
+  100% { transform: scale(4.8); opacity: 0; }
+}
+.ring-pulse-1 { animation: ring-pulse 9s ease-out infinite; }
+.ring-pulse-2 { animation: ring-pulse 9s ease-out infinite 3s; }
+.ring-pulse-3 { animation: ring-pulse 9s ease-out infinite 6s; }
+
+/* Vertical falling data-stream */
+@keyframes stream-fall {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100vh); }
+}
+.stream {
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(14, 165, 233, 0.6), transparent);
+  animation: stream-fall linear infinite;
+}
+
+/* Hex-shaped icon badge */
+.hex-badge {
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+}
+
+/* Card hover accent glow */
+.card-accent {
+  transition: box-shadow 200ms, border-color 200ms;
+}
+.card-accent:hover {
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.30), 0 0 30px -8px rgba(14, 165, 233, 0.25);
+}
+
+/* CTA band gradient */
+.cta-band {
+  background:
+    radial-gradient(ellipse at top left, rgba(14, 165, 233, 0.12), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(8, 47, 73, 0.40), transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+}
+
+/* Section-divider scanning bar */
+.scan-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
+}
+
+/* Legacy sweep-line — kept for any older sections still using it */
 @keyframes sweep {
   from { transform: translateX(-100%); }
   to   { transform: translateX(400%); }
@@ -46,7 +128,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.5), transparent);
   width: 30%;
   animation: sweep 6s linear infinite;
   pointer-events: none;

@@ -49,7 +49,7 @@ export default function Features() {
     <>
       <section className="border-b border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <div className="text-xs tracking-[0.4em] text-cyan-400 mb-4 font-bold">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
             FEATURES
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -72,7 +72,7 @@ export default function Features() {
                 key={f.label}
                 className="border border-white/[0.06] rounded p-6 bg-white/[0.015]"
               >
-                <div className="text-xs tracking-[0.3em] text-cyan-400/70 font-bold mb-3">
+                <div className="text-xs tracking-[0.3em] text-sky-400/70 font-bold mb-3">
                   {f.label}
                 </div>
                 <div className="text-lg font-bold text-white mb-3">
