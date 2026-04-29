@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+/* Always-dark site — no light-mode override. The brand is operations-
+   center aesthetic; a light theme would dilute that signal. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #06090f;
+  --foreground: #e2e8f0;
+  --accent-cyan: #22d3ee;
+  --accent-emerald: #34d399;
+  --accent-amber: #fbbf24;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* A subtle scanline / grid background motif used on hero sections.
+   Apply via `bg-grid` class. Keeps the dark canvas from feeling flat. */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Single sweep line — same motif as the Sentinel app's module headers,
+   reused for cross-product visual consistency. */
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(400%); }
+}
+.sweep-line {
+  position: relative;
+  overflow: hidden;
+}
+.sweep-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.5), transparent);
+  width: 30%;
+  animation: sweep 6s linear infinite;
+  pointer-events: none;
 }
