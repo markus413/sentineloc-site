@@ -1,317 +1,396 @@
-// Home — workflow first (Maya pain #1), privacy as the trust closer.
-// DevShield-density treatment: globe hero, stats, capabilities grid,
-// vault tiers, pricing on home, founder, CTA band.
+// /preview/ — sentineloc.io home page v3.1 per build-handoff doc
+// Section 3. This is the page that will move to / when launch goes
+// live. Until then, / is the coming-soon and this is the staging URL.
 
 import Link from "next/link";
+import HeroCarousel from "../../components/HeroCarousel";
+
+export const metadata = {
+  title: "Sentinel OC — OSINT investigation workspace",
+  description:
+    "Track entities. Run transforms. Build cases that hold up. " +
+    "Export defensible reports. For investigative journalists, " +
+    "OSINT analysts, and researchers.",
+};
 
 export default function Home() {
   return (
     <>
-      {/* HERO — full-bleed photo over solid black */}
-      <section className="relative border-b border-white/[0.06] overflow-hidden bg-black">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "url(/hero-investigator.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.4,
-            transform: "scaleX(-1) translateX(-15%)",
-          }}
-          aria-hidden="true"
-        />
+      <HeroCarousel />
 
-        {/* Falling data streams — kept, suit the after-hours mood */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <span className="stream" style={{ left: "62%", animationDuration: "5s", animationDelay: "0s" }} />
-          <span className="stream" style={{ left: "70%", animationDuration: "7s", animationDelay: "1.4s" }} />
-          <span className="stream" style={{ left: "82%", animationDuration: "6s", animationDelay: "2.6s" }} />
-          <span className="stream" style={{ left: "92%", animationDuration: "8s", animationDelay: "0.8s" }} />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 md:py-44">
-          <div className="inline-flex items-center gap-3 mb-8">
-            <span className="w-8 h-px bg-sky-400/60" />
-            <span className="text-xs tracking-[0.4em] text-sky-400 font-bold">
-              OSINT WORKSPACE · FOR INVESTIGATIVE JOURNALISTS
-            </span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.05] max-w-3xl tracking-tight">
-            Your investigation,<br />organized.{" "}
-            <span className="text-sky-400">Citable. Encrypted. Yours.</span>
-          </h1>
-          <p className="mt-8 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-sans">
-            Built by an investigative journalist. For the people who do
-            this for a living. Stop integrating six tools yourself.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="https://db.sentineloc.io/signup?plan=investigator"
-              className="px-7 py-3.5 text-sm tracking-widest font-bold rounded bg-sky-400 text-[#04070d] hover:bg-sky-300 transition-colors shadow-[0_0_40px_-10px_rgba(14, 165, 233,0.7)]"
-            >
-              START — $79/MO
-            </a>
-            <Link
-              href="/features/"
-              className="px-7 py-3.5 text-sm tracking-widest font-bold rounded border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40 transition-colors"
-            >
-              SEE FEATURES →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS STRIP */}
-      <section className="border-b border-white/[0.06] bg-white/[0.01]">
-        <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Stat value="4" label="Launch transforms" sub="OFAC · GDELT · urlscan · FEC" />
-          <Stat value="3" label="Vault encryption tiers" sub="Lite · Standard · Pro" />
-          <Stat value="$79" label="Investigator / month" sub="Annual prepay 20% off" />
-          <Stat value="0" label="Marketing-grade claims" sub="No 'military-grade' anything" />
-        </div>
-      </section>
-
-      {/* PAIN GRID — what it replaces */}
+      {/* DOORS */}
       <section className="border-b border-white/[0.06]">
-        <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="text-xs tracking-[0.4em] text-sky-400 mb-3 font-bold">
-            WHAT IT REPLACES
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-2xl mb-3">
-            Six browser tabs and a Google Doc. No more.
+        <div className="max-w-5xl mx-auto px-6 py-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 tracking-tight">
+            Two ways in.
           </h2>
-          <p className="text-slate-300 font-sans max-w-2xl mb-12">
-            Four pain points. Each numbered the way the persona doc
-            ranks them — workflow first, privacy fourth.
-          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <PainCard
-              n="01"
-              pain="Tools don't connect"
-              answer="One workspace. Transforms (OFAC, GDELT, urlscan, FEC) flow into investigations you actually save and revisit."
+            <DoorCard
+              href="/for-journalists/"
+              label="→ For investigative journalists"
+              body="Long cases. Source protection. Story-ready exports. Audit trails that stand up."
             />
-            <PainCard
-              n="02"
-              pain="Note-taking is fragile"
-              answer="Investigations are durable records — encrypted, exportable, recoverable. Not a Google Doc one subpoena from disclosure."
-            />
-            <PainCard
-              n="03"
-              pain="No defensible audit trail"
-              answer="Source citation on every fact. When your editor or lawyer asks where it came from, you have an answer that survives scrutiny."
-            />
-            <PainCard
-              n="04"
-              pain="Exporting takes hours"
-              answer="Story-ready PDFs. One click. Sources, entities, dates. Pass-the-editor-test format."
+            <DoorCard
+              href="/for-analysts/"
+              label="→ For OSINT analysts and researchers"
+              body="Client deliverables. Threat research. Due diligence. Reports that bill."
             />
           </div>
         </div>
       </section>
 
-      {/* CAPABILITIES */}
-      <section className="border-b border-white/[0.06] bg-grid">
-        <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="text-xs tracking-[0.4em] text-sky-400 mb-3 font-bold">
-            CAPABILITIES
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-3xl mb-3">
-            Everything an investigation actually needs.
+      {/* SETUP */}
+      <section className="border-b border-white/[0.06]">
+        <div className="max-w-3xl mx-auto px-6 py-24">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+            You don&apos;t need another dashboard. You need a workspace.
           </h2>
-          <p className="text-slate-300 font-sans max-w-2xl mb-12">
-            Six core capabilities, designed by someone who&apos;s used
-            the alternatives at 11pm on a Tuesday.
+          <p className="text-lg text-slate-300 leading-relaxed font-sans mb-5">
+            Your investigation already lives in eight tabs, three docs,
+            and a Notion you forget to update. Sentinel pulls it into
+            one place.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <Capability
-              icon="LINK"
-              title="Link Analysis"
-              body="Force-directed entity graph. Drop a name, see who connects to who. Drag-to-pin, zoom, color by type."
-            />
-            <Capability
-              icon="XFRM"
-              title="Transform Stack"
-              body="OFAC sanctions, GDELT events, urlscan domains, FEC filings. More queued for v1.1."
-            />
-            <Capability
-              icon="DOC"
-              title="Story-Ready Export"
-              body="Story-ready PDF with citations formatted the way a fact-checker reads. One click. Pass the editor email test."
-            />
-            <Capability
-              icon="VLT"
-              title="Vault Encryption"
-              body="Three tiers: Lite (today), Standard (Q4), Pro (Q1 2027). Pick per investigation. Honest about what each defeats."
-            />
-            <Capability
-              icon="LOG"
-              title="Source Audit Trail"
-              body="Every fact pinned to a source. Timestamps, hashes, original URL captures. Survives lawyer scrutiny."
-            />
-            <Capability
-              icon="TEAM"
-              title="Editorial Workflow"
-              body="Editor / reporter / fact-checker roles. Comments, @mentions, activity feed. Built around how newsrooms actually run."
-            />
-          </div>
+          <p className="text-lg text-slate-300 leading-relaxed font-sans">
+            Not a feed. Not a map. A workspace — built around the
+            actual work of investigation.
+          </p>
         </div>
       </section>
 
-      {/* VAULT TIERS */}
+      {/* CONTRAST TABLE */}
+      <section className="border-b border-white/[0.06] bg-grid">
+        <div className="max-w-5xl mx-auto px-6 py-24">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 tracking-tight">
+            What Sentinel is. And what it isn&apos;t.
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm font-sans">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-3 pr-6 text-xs tracking-widest text-slate-500 font-bold w-[40%]">
+                    {" "}
+                  </th>
+                  <th className="text-left py-3 pr-6 text-xs tracking-widest text-sky-400 font-bold">
+                    SENTINEL
+                  </th>
+                  <th className="text-left py-3 text-xs tracking-widest text-slate-500 font-bold">
+                    MONITORING DASHBOARDS
+                    <span className="block text-[10px] text-slate-600 font-normal normal-case tracking-normal mt-1">
+                      SitDeck, World Monitor
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-300">
+                <CompareRow label="Built for" sentinel="People running cases" alt="People watching the world" />
+                <CompareRow label="Core unit" sentinel="An investigation" alt="A feed" />
+                <CompareRow label="Saved investigations with notes" sentinel="✓" alt="—" />
+                <CompareRow label="Entity link analysis" sentinel="✓ Built-in Research tab" alt="—" />
+                <CompareRow label="Source citation per fact" sentinel="✓ Mandatory" alt="—" />
+                <CompareRow label="Confidence scoring" sentinel="✓ High / medium / low" alt="—" />
+                <CompareRow label="Defensible exports" sentinel="✓ PDF, DOCX, Excel, JSON" alt="—" />
+                <CompareRow label="Geographic depth (US, Canada, Mexico)" sentinel="✓ City-level" alt="Global generalist" />
+                <CompareRow label="Tiered encryption (you pick per case)" sentinel="✓ Three tiers, dated roadmap" alt="—" />
+                <CompareRow label="Source-tier separation" sentinel="✓" alt="—" />
+                <CompareRow label="Price" sentinel="$79/mo" alt="Free" />
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-8 text-sm text-slate-300 font-sans max-w-3xl">
+            <strong className="text-white">Honest read:</strong> if you
+            want a global firehose to scroll through with your morning
+            coffee, the free dashboards are great.{" "}
+            <em>Use them.</em> Sentinel is for when you have a case to
+            run, sources to track, and a report to file.
+          </p>
+        </div>
+      </section>
+
+      {/* FOUR PILLARS */}
       <section className="border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 py-24">
           <div className="text-xs tracking-[0.4em] text-sky-400 mb-3 font-bold">
-            VAULT — TIERED PRIVACY
+            FOUR PILLARS
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-3xl mb-6">
-            Pick your threat model. Pay for the protection that fits.
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight">
+            Why people switch.
           </h2>
-          <p className="text-slate-300 max-w-2xl mb-10 font-sans">
-            Most OSINT tools encrypt with vendor-held keys and call it a
-            day. Fine for routine research. Not enough when sources,
-            queries, and notes are sensitive enough that a subpoena to
-            us is a real risk.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Pillar
+              n="1"
+              title="Built for cases, not feeds."
+              body="Saved investigations. Entity bookmarks. Notes that survive deadlines. Export an Incident Report that stands on its own — graph, sources, timeline, citations included."
+              kicker="Your work is cases. Your tool should know that."
+            />
+            <Pillar
+              n="2"
+              title="North American depth, not global breadth."
+              body="Crime tracking by city. Threat assessment for the US, Canada, and Mexico. Sanctions, corporate filings, campaign finance, vulnerability intel."
+              kicker="Not 180 feeds. The right 25, integrated correctly."
+            />
+            <Pillar
+              n="3"
+              title="Built like the targets are watching."
+              body="Decoy entry points. Hidden authentication paths. Mutual TLS client certificates. Honeytoken intrusion detection. No source maps. No search engine indexing of operational surfaces."
+              kicker="Other tools treat your privacy as a setting. Sentinel treats it as the product."
+            />
+            <Pillar
+              n="4"
+              title="Vault: the security tier you choose."
+              body="Pick the protection that fits the case. Vault Lite (today) gives every investigation per-user encryption with separated keys. Vault Standard (Q4 2026) adds client-side encryption — your data is unreadable to us. Vault Pro (Q1 2027) adds hardware keys."
+              kicker="One platform. Three tiers. Honest about what each protects against."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* VAULT */}
+      <section className="border-b border-white/[0.06]">
+        <div className="max-w-5xl mx-auto px-6 py-24">
+          <div className="text-xs tracking-[0.4em] text-sky-400 mb-3 font-bold">
+            VAULT
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+            A note on Vault.
+          </h2>
+          <p className="text-slate-300 max-w-3xl mb-4 font-sans leading-relaxed">
+            Most &ldquo;secure&rdquo; SaaS products have one tier of
+            encryption: theirs. They hold your keys. They can read your
+            data. Subpoenas get content.
           </p>
+          <p className="text-slate-300 max-w-3xl mb-12 font-sans leading-relaxed">
+            Vault is different. You pick the protection per
+            investigation, based on what&apos;s actually at stake.
+          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <VaultTier
               name="Vault Lite"
-              status="Today, included"
+              status="Included, today"
               accent="emerald"
-              desc="Per-user encryption, vendor-held keys, separated KMS. Recoverable. Subpoena-readable. Best for routine investigations."
+              bullets={[
+                "Per-user encryption keys, vendor-held in a separated KMS",
+                "Operational separation between auth and data infrastructure",
+                "Standard backups, fast password recovery",
+              ]}
+              defeats="Opportunistic data breach, casual rogue access"
+              doesnt="Lawful compulsion of Sentrion Labs"
+              best="Routine investigations, background research, day-to-day work"
             />
             <VaultTier
               name="Vault Standard"
               status="Q4 2026"
               accent="amber"
-              desc="Encrypted in your browser before reaching us. We cannot decrypt your investigations. Subpoena gets ciphertext."
+              bullets={[
+                "Client-side encryption — content encrypted in your browser before it leaves",
+                "24-word recovery phrase (you save it offline)",
+                "We literally cannot decrypt your investigation contents",
+              ]}
+              defeats="Vendor breach, vendor subpoena, vendor sale or acquisition"
+              doesnt="Compromise of your own device, phishing, coerced disclosure"
+              best="Sensitive investigations, source-protection-critical work"
             />
             <VaultTier
               name="Vault Pro"
               status="Q1 2027"
               accent="red"
-              desc="Hardware-key authentication. Optional team threshold sharing. No single member can be compelled to disclose."
+              bullets={[
+                "Everything in Standard, plus hardware key (FIDO2 / YubiKey) required for login",
+                "Per-tier warrant canary",
+              ]}
+              defeats="Everything Standard defeats, plus phishing"
+              doesnt="Total device compromise, coerced disclosure of all your factors"
+              best="Investigations that absolutely cannot afford to leak"
             />
           </div>
-          <p className="mt-8 text-xs text-slate-500 font-sans">
-            We do not claim &ldquo;military-grade.&rdquo; We do not claim
-            &ldquo;unhackable.&rdquo; We tell you what each tier actually
-            defeats.{" "}
-            <Link href="/pricing/" className="text-sky-400 hover:underline">
-              Full Vault breakdown →
+          <div className="mt-12 max-w-3xl">
+            <h3 className="text-base font-bold text-white mb-3">
+              What we won&apos;t claim
+            </h3>
+            <p className="text-sm text-slate-300 leading-relaxed font-sans mb-6">
+              No system protects against everything. Vault doesn&apos;t
+              make your data unreadable to anyone in the universe
+              forever. We tell you exactly what each tier protects
+              against and where it stops, so you can make a real
+              decision about a real threat model.
+            </p>
+            <Link
+              href="/security/"
+              className="inline-block text-sm tracking-widest font-bold text-sky-400 hover:text-sky-300 transition-colors"
+            >
+              [ Read the Vault architecture documentation ]
             </Link>
-          </p>
+          </div>
         </div>
       </section>
 
-      {/* PRICING — surfaced on home */}
+      {/* PRICING */}
       <section className="border-b border-white/[0.06] bg-grid">
-        <div className="max-w-6xl mx-auto px-6 py-24">
+        <div className="max-w-5xl mx-auto px-6 py-24">
           <div className="text-xs tracking-[0.4em] text-sky-400 mb-3 font-bold">
             PRICING
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-3xl mb-3">
-            Two plans. Add encryption as your work demands it.
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight">
+            One tier at launch. Vault as you need it.
           </h2>
-          <p className="text-slate-300 font-sans max-w-2xl mb-12">
-            Vault Lite encryption is included on every plan. Stronger
-            tiers attach as add-ons.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <PriceCard
-              name="Investigator"
-              tagline="One journalist, solo cases"
-              price="$79"
-              priceSuffix="/mo"
-              priceNote="Annual prepay · $99/mo monthly"
-              features={[
-                "Unlimited investigations",
-                "Story-ready PDF export with citations",
-                "Link Analysis (entity graphs)",
-                "4 launch transforms (OFAC, GDELT, urlscan, FEC)",
-                "Vault Lite encryption (always)",
-              ]}
-              ctaHref="https://db.sentineloc.io/signup?plan=investigator"
-              ctaLabel="START — $79/MO"
-            />
-            <PriceCard
-              name="Team"
-              tagline="Editor + reporters on a beat"
-              price="$299"
-              priceSuffix="/mo"
-              priceNote="5 seats · annual prepay 20% off"
-              features={[
-                "Everything in Investigator",
-                "Shared investigations",
-                "Per-investigation comments + @mentions",
-                "Activity feed across the team",
-                "Editor / reporter / fact-checker roles",
-              ]}
-              ctaHref="https://db.sentineloc.io/signup?plan=team"
-              ctaLabel="START — $299/MO"
-              featured
-            />
+
+          <div className="border-2 border-sky-400/40 rounded p-8 md:p-10 bg-sky-400/[0.04] max-w-3xl">
+            <div className="flex items-baseline gap-3 mb-3 flex-wrap">
+              <div className="text-xs tracking-[0.3em] font-bold text-sky-400">
+                TIER 1 &middot; &ldquo;SPECTRE&rdquo;
+              </div>
+            </div>
+            <div className="flex items-baseline gap-1 mb-3">
+              <span className="text-5xl font-bold text-white">$79</span>
+              <span className="text-xl text-slate-400">/mo</span>
+            </div>
+            <p className="text-slate-300 font-sans mb-6 leading-relaxed">
+              All sources. All features. Full export. Vault Lite
+              included.
+            </p>
+            <p className="text-xs text-slate-500 font-sans mb-7">
+              $99/mo month-to-month. $79/mo billed annually. 14-day
+              free trial. No credit card to start. Cancel anytime.
+            </p>
+            <a
+              href="https://db.sentineloc.io/signup?plan=spectre"
+              className="inline-block px-7 py-3.5 text-sm tracking-widest font-bold rounded bg-sky-400 text-[#04070d] hover:bg-sky-300 transition-colors shadow-[0_0_30px_-8px_rgba(14,165,233,0.6)]"
+            >
+              START TRIAL
+            </a>
           </div>
-          <p className="text-center mt-10 text-xs text-slate-500 font-sans">
-            10+ seats?{" "}
-            <Link href="/about/" className="text-sky-400 hover:underline">
-              Contact for newsroom licensing
-            </Link>
-            {" · "}
+
+          <div className="mt-12 max-w-3xl">
+            <h3 className="text-sm tracking-[0.3em] font-bold text-sky-400 mb-4">
+              VAULT ADD-ONS · PRE-ORDER
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <VaultAddon
+                name="Vault Standard"
+                price="+$30/mo"
+                avail="Available Q4 2026"
+                href="https://db.sentineloc.io/reserve?vault=standard"
+              />
+              <VaultAddon
+                name="Vault Pro"
+                price="+$80/mo"
+                avail="Available Q1 2027"
+                href="https://db.sentineloc.io/reserve?vault=pro"
+              />
+            </div>
+            <p className="mt-4 text-xs text-slate-500 font-sans">
+              Reserve a Vault tier add-on today and lock in launch
+              pricing. We&apos;ll email you when it ships. Cancel
+              anytime.
+            </p>
+          </div>
+
+          <p className="mt-8 text-xs text-slate-500 font-sans">
             <Link href="/pricing/" className="text-sky-400 hover:underline">
-              Full pricing breakdown
+              Full pricing breakdown →
             </Link>
           </p>
         </div>
       </section>
 
-      {/* FOUNDER */}
+      {/* WHAT IT'S NOT */}
       <section className="border-b border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-6 py-24">
-          <div className="text-xs tracking-[0.4em] text-sky-400 mb-3 font-bold">
-            BUILT BY ONE OF YOU
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-3xl mb-6">
-            Every product decision answers to a journalist&apos;s Tuesday afternoon.
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight">
+            Sentinel isn&apos;t for everyone.
           </h2>
-          <p className="text-slate-300 max-w-3xl leading-relaxed font-sans text-lg">
-            The PDF export passes the editor-email test on the first
-            try. Source citations format the way a fact-checker reads
-            them. Investigations are durable records, not browser
-            sessions. Pricing fits the OOP-versus-outlet-expense
-            ranges your reimbursement cycle actually runs on.{" "}
-            <Link href="/about/" className="text-sky-400 hover:underline">
-              More on the founder &rarr;
-            </Link>
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-base font-bold text-white mb-5">
+                You probably don&apos;t want this if:
+              </h3>
+              <ul className="space-y-4 text-sm text-slate-300 font-sans leading-relaxed">
+                <li>
+                  You want a free global news dashboard. Use{" "}
+                  <a href="https://www.worldmonitor.app" className="text-sky-400 hover:underline">
+                    World Monitor
+                  </a>{" "}
+                  or{" "}
+                  <a href="https://app.sitdeck.com" className="text-sky-400 hover:underline">
+                    SitDeck
+                  </a>
+                  . They&apos;re great at what they do.
+                </li>
+                <li>
+                  You don&apos;t run actual investigations. This is
+                  overbuilt for casual world-watching.
+                </li>
+                <li>
+                  Your work doesn&apos;t involve sensitive sources or
+                  targets who&apos;d rather not be looked at. The
+                  hardening is overkill for general use.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-white mb-5">
+                You probably do want this if:
+              </h3>
+              <ul className="space-y-4 text-sm text-slate-300 font-sans leading-relaxed">
+                <li>
+                  You&apos;re working real cases, with real timelines,
+                  and real consequences if your notes leak.
+                </li>
+                <li>
+                  You&apos;ve outgrown a stack of browser tabs, Notion,
+                  and your own memory.
+                </li>
+                <li>
+                  You believe the tools you use should respect that the
+                  work itself is sensitive.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* CTA BAND */}
+      {/* CTA FOOTER */}
       <section className="cta-band border-b border-white/[0.06]">
         <div className="max-w-4xl mx-auto px-6 py-24 text-center">
-          <div className="text-xs tracking-[0.4em] text-sky-400 mb-4 font-bold">
-            BETA THIS SUMMER
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Stop being the integration layer.
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">
+            Ready to try it?
           </h2>
-          <p className="text-lg text-slate-300 font-sans max-w-2xl mx-auto mb-10">
-            Investigator pricing locked at $79/mo for the first 12
-            months for early access. Team at $299/mo for five seats.
+          <a
+            href="https://db.sentineloc.io/signup?plan=spectre"
+            className="inline-block px-8 py-4 text-sm tracking-widest font-bold rounded bg-sky-400 text-[#04070d] hover:bg-sky-300 transition-colors shadow-[0_0_40px_-10px_rgba(14,165,233,0.7)]"
+          >
+            START YOUR 14-DAY TRIAL
+          </a>
+          <p className="mt-5 text-xs text-slate-500 font-sans">
+            No credit card. No ads. No tracking. Cancel anytime.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="https://db.sentineloc.io/signup?plan=investigator"
-              className="px-7 py-3.5 text-sm tracking-widest font-bold rounded bg-sky-400 text-[#04070d] hover:bg-sky-300 transition-colors shadow-[0_0_40px_-10px_rgba(14, 165, 233,0.7)]"
-            >
-              START — $79/MO
-            </a>
-            <Link
-              href="/pricing/"
-              className="px-7 py-3.5 text-sm tracking-widest font-bold rounded border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40 transition-colors"
-            >
-              SEE PRICING
-            </Link>
+
+          <div className="mt-12 pt-12 border-t border-white/10">
+            <p className="text-sm text-slate-300 font-sans mb-5">
+              Want a tour built for your work?
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/for-journalists/"
+                className="px-6 py-3 text-sm tracking-widest font-bold rounded border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40 transition-colors"
+              >
+                → FOR INVESTIGATIVE JOURNALISTS
+              </Link>
+              <Link
+                href="/for-analysts/"
+                className="px-6 py-3 text-sm tracking-widest font-bold rounded border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40 transition-colors"
+              >
+                → FOR OSINT ANALYSTS AND RESEARCHERS
+              </Link>
+            </div>
+            <p className="mt-8 text-xs text-slate-500 font-sans">
+              Questions? Email{" "}
+              <a href="mailto:mark@sentrionlabs.io" className="text-sky-400 hover:underline">
+                mark@sentrionlabs.io
+              </a>
+              .
+            </p>
           </div>
         </div>
       </section>
@@ -319,49 +398,39 @@ export default function Home() {
   );
 }
 
-function Stat({ value, label, sub }: { value: string; label: string; sub?: string }) {
+function DoorCard({ href, label, body }: { href: string; label: string; body: string }) {
   return (
-    <div>
-      <div className="text-4xl md:text-5xl font-bold text-sky-400 tracking-tight">
-        {value}
-      </div>
-      <div className="text-xs tracking-[0.2em] text-slate-200 font-bold mt-2 uppercase">
-        {label}
-      </div>
-      {sub && <div className="text-[10px] text-slate-500 mt-1 font-sans">{sub}</div>}
-    </div>
+    <Link
+      href={href}
+      className="card-accent block border border-white/[0.10] rounded p-7 bg-white/[0.02] hover:border-sky-400/40 transition-colors"
+    >
+      <div className="text-base font-bold text-sky-400 mb-3">{label}</div>
+      <p className="text-sm text-slate-300 leading-relaxed font-sans">{body}</p>
+    </Link>
   );
 }
 
-function PainCard({ n, pain, answer }: { n: string; pain: string; answer: string }) {
+function CompareRow({ label, sentinel, alt }: { label: string; sentinel: string; alt: string }) {
+  return (
+    <tr className="border-b border-white/[0.04]">
+      <td className="py-3 pr-6 text-slate-400">{label}</td>
+      <td className="py-3 pr-6 text-white font-medium">{sentinel}</td>
+      <td className="py-3 text-slate-500">{alt}</td>
+    </tr>
+  );
+}
+
+function Pillar({ n, title, body, kicker }: { n: string; title: string; body: string; kicker: string }) {
   return (
     <div className="card-accent border border-white/[0.08] rounded p-7 bg-white/[0.02]">
-      <div className="flex items-center gap-3 mb-3">
+      <div className="flex items-center gap-3 mb-4">
         <div className="hex-badge w-9 h-9 bg-sky-400/10 border border-sky-400/30 flex items-center justify-center">
-          <span className="text-[9px] tracking-[0.1em] font-bold text-sky-400">
-            {n}
-          </span>
-        </div>
-        <div className="text-[10px] tracking-[0.3em] text-sky-400/80 font-bold">
-          PAIN
+          <span className="text-xs font-bold text-sky-400">{n}</span>
         </div>
       </div>
-      <div className="text-lg font-bold text-white mb-3">{pain}</div>
-      <div className="text-sm text-slate-300 leading-relaxed font-sans">{answer}</div>
-    </div>
-  );
-}
-
-function Capability({ icon, title, body }: { icon: string; title: string; body: string }) {
-  return (
-    <div className="card-accent border border-white/[0.08] rounded p-6 bg-white/[0.02]">
-      <div className="hex-badge w-12 h-12 bg-sky-400/10 border border-sky-400/30 flex items-center justify-center mb-5">
-        <span className="text-[9px] tracking-[0.15em] font-bold text-sky-400">
-          {icon}
-        </span>
-      </div>
-      <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-      <p className="text-sm text-slate-300 leading-relaxed font-sans">{body}</p>
+      <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{title}</h3>
+      <p className="text-sm text-slate-300 leading-relaxed font-sans mb-4">{body}</p>
+      <p className="text-sm text-sky-300/90 leading-relaxed font-sans italic">{kicker}</p>
     </div>
   );
 }
@@ -369,112 +438,70 @@ function Capability({ icon, title, body }: { icon: string; title: string; body: 
 function VaultTier({
   name,
   status,
-  desc,
   accent,
+  bullets,
+  defeats,
+  doesnt,
+  best,
 }: {
   name: string;
   status: string;
-  desc: string;
   accent: "emerald" | "amber" | "red";
+  bullets: string[];
+  defeats: string;
+  doesnt: string;
+  best: string;
 }) {
   const map = {
-    emerald: {
-      border: "border-emerald-500/30",
-      badge: "bg-emerald-400/10 text-emerald-300 border-emerald-400/30",
-      hex: "bg-emerald-400/10 border-emerald-400/40 text-emerald-300",
-    },
-    amber: {
-      border: "border-amber-500/30",
-      badge: "bg-amber-400/10 text-amber-300 border-amber-400/30",
-      hex: "bg-amber-400/10 border-amber-400/40 text-amber-300",
-    },
-    red: {
-      border: "border-red-500/30",
-      badge: "bg-red-400/10 text-red-300 border-red-400/30",
-      hex: "bg-red-400/10 border-red-400/40 text-red-300",
-    },
+    emerald: { border: "border-emerald-500/30", badge: "bg-emerald-400/10 text-emerald-300 border-emerald-400/30" },
+    amber: { border: "border-amber-500/30", badge: "bg-amber-400/10 text-amber-300 border-amber-400/30" },
+    red: { border: "border-red-500/30", badge: "bg-red-400/10 text-red-300 border-red-400/30" },
   }[accent];
   return (
-    <div className={`border rounded p-7 bg-white/[0.02] card-accent ${map.border}`}>
-      <div className="flex items-start justify-between mb-5">
-        <div className={`hex-badge w-10 h-10 border flex items-center justify-center ${map.hex}`}>
-          <span className="text-[9px] tracking-[0.1em] font-bold">
-            {name.split(" ")[1].slice(0, 4).toUpperCase()}
-          </span>
-        </div>
+    <div className={`border rounded p-6 bg-white/[0.02] ${map.border}`}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="font-bold text-white text-lg tracking-wide">{name}</div>
         <span className={`px-2 py-1 text-[9px] tracking-widest font-bold rounded border ${map.badge}`}>
           {status}
         </span>
       </div>
-      <div className="font-bold text-white text-lg mb-2 tracking-wide">{name}</div>
-      <div className="text-sm text-slate-300 leading-relaxed font-sans">{desc}</div>
+      <ul className="space-y-2 mb-5 text-xs text-slate-300 font-sans">
+        {bullets.map((b) => (
+          <li key={b} className="flex items-start gap-2">
+            <span className="text-sky-400 mt-0.5">·</span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="space-y-2 text-[11px] font-sans">
+        <div>
+          <span className="text-emerald-400 font-bold tracking-wider">PROTECTS AGAINST: </span>
+          <span className="text-slate-300">{defeats}</span>
+        </div>
+        <div>
+          <span className="text-slate-500 font-bold tracking-wider">DOESN&apos;T: </span>
+          <span className="text-slate-500">{doesnt}</span>
+        </div>
+        <div>
+          <span className="text-sky-400 font-bold tracking-wider">BEST FOR: </span>
+          <span className="text-slate-300">{best}</span>
+        </div>
+      </div>
     </div>
   );
 }
 
-function PriceCard({
-  name,
-  tagline,
-  price,
-  priceSuffix,
-  priceNote,
-  features,
-  ctaHref,
-  ctaLabel,
-  featured,
-}: {
-  name: string;
-  tagline: string;
-  price: string;
-  priceSuffix: string;
-  priceNote: string;
-  features: string[];
-  ctaHref: string;
-  ctaLabel: string;
-  featured?: boolean;
-}) {
+function VaultAddon({ name, price, avail, href }: { name: string; price: string; avail: string; href: string }) {
   return (
-    <div
-      className={
-        "relative rounded p-8 card-accent " +
-        (featured
-          ? "border-2 border-sky-400/50 bg-sky-400/[0.04]"
-          : "border border-white/[0.10] bg-white/[0.02]")
-      }
-    >
-      {featured && (
-        <div className="absolute -top-3 left-8 px-3 py-1 text-[10px] tracking-widest font-bold rounded bg-sky-400 text-[#04070d]">
-          ★ MOST COMMON
-        </div>
-      )}
-      <div className="text-xs tracking-[0.3em] font-bold text-sky-400 mb-2">
-        {name.toUpperCase()}
+    <a href={href} className="card-accent block border border-white/[0.10] rounded p-5 bg-white/[0.02]">
+      <div className="flex items-center justify-between gap-3 mb-1">
+        <div className="font-bold text-white">{name}</div>
+        <div className="text-sky-400 font-bold">{price}</div>
       </div>
-      <div className="text-slate-300 mb-6 font-sans">{tagline}</div>
-      <div className="mb-2 flex items-baseline gap-1">
-        <span className="text-5xl font-bold text-white">{price}</span>
-        <span className="text-xl text-slate-400">{priceSuffix}</span>
+      <div className="text-xs text-slate-500 font-sans mb-3">{avail}</div>
+      <div className="text-xs tracking-widest font-bold text-sky-400">
+        [ RESERVE EARLY ACCESS → ]
       </div>
-      <div className="text-xs text-slate-500 mb-8 font-sans">{priceNote}</div>
-      <ul className="space-y-3 mb-8 font-sans">
-        {features.map((f) => (
-          <li key={f} className="flex items-start gap-2.5 text-sm text-slate-200">
-            <span className="text-sky-400 mt-0.5 font-bold">✓</span>
-            <span>{f}</span>
-          </li>
-        ))}
-      </ul>
-      <a
-        href={ctaHref}
-        className={
-          "block text-center px-6 py-3.5 text-sm tracking-widest font-bold rounded transition-colors " +
-          (featured
-            ? "bg-sky-400 text-[#04070d] hover:bg-sky-300 shadow-[0_0_30px_-8px_rgba(14, 165, 233,0.6)]"
-            : "border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40")
-        }
-      >
-        {ctaLabel}
-      </a>
-    </div>
+    </a>
   );
 }

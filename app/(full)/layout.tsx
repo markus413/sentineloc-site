@@ -25,10 +25,12 @@ function SiteHeader() {
             SENTINEL<span className="text-sky-400">:</span>OC
           </span>
         </Link>
-        <nav className="flex items-center gap-6 text-xs tracking-widest text-slate-400">
+        <nav className="flex items-center gap-5 text-xs tracking-widest text-slate-400">
+          <Link href="/for-journalists/" className="hover:text-white transition-colors">JOURNALISTS</Link>
+          <Link href="/for-analysts/" className="hover:text-white transition-colors">ANALYSTS</Link>
           <Link href="/features/" className="hover:text-white transition-colors">FEATURES</Link>
           <Link href="/pricing/" className="hover:text-white transition-colors">PRICING</Link>
-          <Link href="/about/" className="hover:text-white transition-colors">ABOUT</Link>
+          <Link href="/security/" className="hover:text-white transition-colors">SECURITY</Link>
         </nav>
         <div className="ml-auto flex items-center gap-3">
           <a
@@ -64,9 +66,11 @@ function SiteFooter() {
         <div>
           <div className="tracking-widest text-slate-500 mb-3">PRODUCT</div>
           <ul className="space-y-2 text-slate-400">
+            <li><Link href="/for-journalists/" className="hover:text-white">For journalists</Link></li>
+            <li><Link href="/for-analysts/" className="hover:text-white">For analysts</Link></li>
             <li><Link href="/features/" className="hover:text-white">Features</Link></li>
             <li><Link href="/pricing/" className="hover:text-white">Pricing</Link></li>
-            <li><Link href="/about/" className="hover:text-white">About</Link></li>
+            <li><Link href="/security/" className="hover:text-white">Security</Link></li>
           </ul>
         </div>
         <div>
