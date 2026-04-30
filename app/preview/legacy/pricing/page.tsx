@@ -70,7 +70,7 @@ export default function Pricing() {
           <p className="text-xs text-slate-500 font-sans">
             Annual prepay: 20% discount on either plan. Larger newsrooms
             (10+ seats):{" "}
-            <Link href="/about/" className="text-sky-400 hover:underline">
+            <Link href="/preview/legacy/about/" className="text-sky-400 hover:underline">
               contact us
             </Link>
             .

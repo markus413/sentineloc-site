@@ -52,7 +52,7 @@ export default function Home() {
               START — $79/MO
             </a>
             <Link
-              href="/features/"
+              href="/preview/legacy/features/"
               className="px-7 py-3.5 text-sm tracking-widest font-bold rounded border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40 transition-colors"
             >
               SEE FEATURES →
@@ -196,7 +196,7 @@ export default function Home() {
             We do not claim &ldquo;military-grade.&rdquo; We do not claim
             &ldquo;unhackable.&rdquo; We tell you what each tier actually
             defeats.{" "}
-            <Link href="/pricing/" className="text-sky-400 hover:underline">
+            <Link href="/preview/legacy/pricing/" className="text-sky-400 hover:underline">
               Full Vault breakdown →
             </Link>
           </p>
@@ -253,11 +253,11 @@ export default function Home() {
           </div>
           <p className="text-center mt-10 text-xs text-slate-500 font-sans">
             10+ seats?{" "}
-            <Link href="/about/" className="text-sky-400 hover:underline">
+            <Link href="/preview/legacy/about/" className="text-sky-400 hover:underline">
               Contact for newsroom licensing
             </Link>
             {" · "}
-            <Link href="/pricing/" className="text-sky-400 hover:underline">
+            <Link href="/preview/legacy/pricing/" className="text-sky-400 hover:underline">
               Full pricing breakdown
             </Link>
           </p>
@@ -279,7 +279,7 @@ export default function Home() {
             them. Investigations are durable records, not browser
             sessions. Pricing fits the OOP-versus-outlet-expense
             ranges your reimbursement cycle actually runs on.{" "}
-            <Link href="/about/" className="text-sky-400 hover:underline">
+            <Link href="/preview/legacy/about/" className="text-sky-400 hover:underline">
               More on the founder &rarr;
             </Link>
           </p>
@@ -307,7 +307,7 @@ export default function Home() {
               START — $79/MO
             </a>
             <Link
-              href="/pricing/"
+              href="/preview/legacy/pricing/"
               className="px-7 py-3.5 text-sm tracking-widest font-bold rounded border border-white/15 text-slate-200 hover:bg-white/5 hover:border-sky-400/40 transition-colors"
             >
               SEE PRICING
