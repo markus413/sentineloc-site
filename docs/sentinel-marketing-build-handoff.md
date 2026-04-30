@@ -41,7 +41,7 @@ These rules apply across both sites and govern every copy decision.
   - **Tier 4 "Argus"** — full retail, post-launch
 - **Tier names are final; tier contents are not.** Marketing copy must not commit to tier contents beyond Tier 1.
 - Old names ("Investigator," "Team," "Newsroom") are deprecated. Update any reference.
-- All four codenames require trademark clearance check before public use.
+- Tier codenames are internal nicknames, not registered marks. They appear in marketing copy as flavor; the contractual product names are "Tier 1," "Tier 2," etc. No trademark filings planned.
 
 ### Scope rules
 
@@ -732,13 +732,13 @@ Open items requiring Mark's microscope pass before launch.
 
 1. **STIX 2.1 export** is mentioned on `/for-analysts` as "coming in Phase 3." This is a forward-looking claim. Per the post-launch builds doc, STIX 2.1 is on the Phase 3 list. Confirm Phase 3 timing is still real before launch. If Phase 3 slips materially, this line should be softened or removed.
 
-2. **Trademark check on Argus** — common name in security/insurance/media. Verify clean trademark space in the OSINT/security software category before launch.
+2. **Trademark check on Argus** — *N/A*. Tier codenames are nicknames only, not registered marks (decision 2026-04-30). Item retained for audit; no action required.
 
 3. **Trademark conflict on Overwatch** — *resolved*. Overwatch deprecated; replaced with Helios (Tier 3). Aegis was an interim placeholder; superseded 2026-04-30.
 
 4. **Spectre/CPU vulnerability association** — name carries minor baggage from the 2018 Spectre/Meltdown CPU vulnerability. Mostly fine, but security-aware buyers may notice. Decide whether to embrace, ignore, or replace.
 
-5. **Trademark consultation** — when ready to lock tier names publicly, run all four through trademark counsel for clearance in software/SaaS classes (9 and 42). This is cheap insurance and standard practice before public use.
+5. **Trademark consultation** — *N/A*. Decision 2026-04-30: tier codenames are internal nicknames, not registered marks. Sentinel OC and Sentrion Labs marks remain on the trademark plan; tier codenames do not.
 
 6. **Tier naming convention adopted: Tier N "Codename" with codename capitalized in quotes.** Update vault build plan, post-launch builds, and any other doc that references "Investigator," "Team," or "Newsroom" pricing. This is a session-level decision that needs to propagate to canonical docs before launch.
 
@@ -784,7 +784,6 @@ Suggested order for Claude Code to scaffold and build:
 9. PGP key generation, fingerprint publication
 10. Warrant canary first signature
 11. Date placeholders filled (`[XXX - DATE COMING - XXX]`)
-12. Trademark clearance confirmations from counsel
 
 ---
 
