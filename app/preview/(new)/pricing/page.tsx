@@ -78,8 +78,8 @@ export default function Pricing() {
             each one ships.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <UpcomingTier n="2" name='"Vanguard"' tagline="Solo, equipped" />
-            <UpcomingTier n="3" name='"Aegis"' tagline="Coming post-launch" />
+            <UpcomingTier n="2" name='"Janus"' tagline="Solo, equipped" />
+            <UpcomingTier n="3" name='"Helios"' tagline="Coming post-launch" />
             <UpcomingTier n="4" name='"Argus"' tagline="Full retail" />
           </div>
         </div>

@@ -36,8 +36,8 @@ These rules apply across both sites and govern every copy decision.
 - Format: **Tier N "Codename"** with codename capitalized in quotes.
 - Lineup (locked):
   - **Tier 1 "Spectre"** — solo, available at launch
-  - **Tier 2 "Vanguard"** — solo-but-equipped, post-launch
-  - **Tier 3 "Aegis"** — post-launch
+  - **Tier 2 "Janus"** — solo-but-equipped, post-launch
+  - **Tier 3 "Helios"** — post-launch
   - **Tier 4 "Argus"** — full retail, post-launch
 - **Tier names are final; tier contents are not.** Marketing copy must not commit to tier contents beyond Tier 1.
 - Old names ("Investigator," "Team," "Newsroom") are deprecated. Update any reference.
@@ -734,7 +734,7 @@ Open items requiring Mark's microscope pass before launch.
 
 2. **Trademark check on Argus** — common name in security/insurance/media. Verify clean trademark space in the OSINT/security software category before launch.
 
-3. **Trademark conflict on Overwatch** — *resolved*. Overwatch deprecated; replaced with Aegis (Tier 3).
+3. **Trademark conflict on Overwatch** — *resolved*. Overwatch deprecated; replaced with Helios (Tier 3). Aegis was an interim placeholder; superseded 2026-04-30.
 
 4. **Spectre/CPU vulnerability association** — name carries minor baggage from the 2018 Spectre/Meltdown CPU vulnerability. Mostly fine, but security-aware buyers may notice. Decide whether to embrace, ignore, or replace.
 
@@ -742,7 +742,7 @@ Open items requiring Mark's microscope pass before launch.
 
 6. **Tier naming convention adopted: Tier N "Codename" with codename capitalized in quotes.** Update vault build plan, post-launch builds, and any other doc that references "Investigator," "Team," or "Newsroom" pricing. This is a session-level decision that needs to propagate to canonical docs before launch.
 
-7. **Tier names locked, contents not.** Lineup: Tier 1 "Spectre," Tier 2 "Vanguard," Tier 3 "Aegis," Tier 4 "Argus." What features each tier includes is open and to be specified separately. Marketing copy must not commit to tier contents beyond Tier 1.
+7. **Tier names locked, contents not.** Lineup: Tier 1 "Spectre," Tier 2 "Janus," Tier 3 "Helios," Tier 4 "Argus." What features each tier includes is open and to be specified separately. Marketing copy must not commit to tier contents beyond Tier 1.
 
 8. **Vault add-on availability across tiers** — decide whether Vault Standard / Vault Pro remain add-ons available on all tiers, or whether higher tiers bundle them by default. Affects pricing page structure and revenue model.
 
