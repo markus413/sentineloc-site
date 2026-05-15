@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Sentinel pre-commit: secrets scan via gitleaks.
+#
+# Runs `gitleaks protect --staged` against the current index, so the
+# scan sees exactly what would land in the commit. Blocks the commit
+# on any finding. Use SKIP_GITLEAKS=1 git commit ... to bypass for a
+# known false positive (and then add a fix or a baseline entry).
+#
+# Why pre-commit + not pre-push: catching it early means the secret
+# never enters git history. Once committed, a `git reset` is messy
+# (especially after a push). Block at the cheapest moment.
+#
+# Install: this hook is at .git/hooks/pre-commit. Git hooks aren't
+# checked in by default; if you rebuild your clone, re-run the
+# installer at scripts/install-git-hooks.sh (TODO).
+
+set -e
+
+if [ -n "$SKIP_GITLEAKS" ]; then
+  echo "[pre-commit] gitleaks skipped via SKIP_GITLEAKS=1" >&2
+  exit 0
+fi
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "[pre-commit] gitleaks not installed — install with: brew install gitleaks" >&2
+  echo "[pre-commit] commit BLOCKED. Use SKIP_GITLEAKS=1 to bypass." >&2
+  exit 1
+fi
+
+# --redact prints findings with the secret masked so a leaked secret
+# isn't doubled up by leaking into the terminal/scrollback.
+# -v keeps the line/file context so we know WHERE to fix.
+gitleaks protect --staged --redact -v --no-banner 2>&1 || {
+  echo "" >&2
+  echo "[pre-commit] gitleaks found a likely secret in staged changes." >&2
+  echo "[pre-commit] Fix the offending line, unstage it, or — if a false" >&2
+  echo "[pre-commit] positive — re-run with SKIP_GITLEAKS=1 git commit ..." >&2
+  exit 1
+}
