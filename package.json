@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy:install": "npm ci --ignore-scripts",
+    "audit:check": "npm audit --production --audit-level=high"
   },
   "dependencies": {
     "next": "16.2.4",
