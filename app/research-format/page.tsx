@@ -201,7 +201,7 @@ function SentinelPitch() {
           REQUEST BETA ACCESS →
         </Link>
         <a
-          href="https://github.com/markus413"
+          href="https://github.com/sentineloc-adm/sentineloc-research-format-prompts"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center justify-center px-6 py-3 rounded border border-slate-500/40 text-slate-300 text-sm font-bold tracking-widest hover:border-slate-300 hover:text-white transition-colors"
