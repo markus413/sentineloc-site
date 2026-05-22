@@ -115,7 +115,7 @@ function Prose() {
       <SectionHeading>What is Sentinel OC?</SectionHeading>
       <p>
         Sentinel is an investigative workspace built for the way
-        professional investigation actually works.
+        professional investigations actually works.
       </p>
       <p className="mt-5">
         Track entities, relationships, and evidence in a structured
@@ -142,7 +142,7 @@ function Prose() {
       </p>
       <p className="mt-5">Beta testers help identify:</p>
       <ProseList items={[
-        "What works in real investigation workflows",
+        "What works in real investigative workflows",
         "What's confusing or missing",
         "What features matter most to professional users",
         "Where the product needs refinement before public release",
@@ -183,8 +183,8 @@ function Prose() {
         should be investigated.
       </p>
       <p className="mt-5">
-        Anyone doing rigorous source-based investigation is the right
-        fit.
+        Anyone doing rigorous source-based investigations is the
+        right fit.
       </p>
     </section>
   );
