@@ -461,7 +461,7 @@ function VaultTier({
     <div className={`border rounded p-6 bg-white/[0.02] ${map.border}`}>
       <div className="flex items-center justify-between mb-4">
         <div className="font-bold text-white text-lg tracking-wide">{name}</div>
-        <span className={`px-2 py-1 text-[9px] tracking-widest font-bold rounded border ${map.badge}`}>
+        <span className={`px-2 py-1 text-[11px] tracking-widest font-bold rounded border ${map.badge}`}>
           {status}
         </span>
       </div>
