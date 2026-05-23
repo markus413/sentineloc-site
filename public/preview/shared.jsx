@@ -128,7 +128,7 @@ const FEATURES = [
     bullets: [
       "Fourteen entity types — person, org, business, vessel, aircraft, IP, domain, email, phone, address, document, event, location, custom",
       "Thirteen edge types with first-class semantics — owns, controls, employed-by, sanctioned-by, family-of, subsidiary-of, located-at, more",
-      "Force-directed and geocoded map layouts",
+      "Force-directed, hierarchical, and geocoded map layouts",
     ]
   },
   {
@@ -205,11 +205,11 @@ const FEATURES = [
   {
     tag: "Reports & Custody",
     title: "Every export carries its receipts.",
-    body: "Each dossier ships in your choice of format. The JSON export includes the full mutation log — every entity creation, edge update, and note change for that investigation — so reviewers can trace every claim back to the moment it landed on the graph.",
+    body: "Each dossier ships in your choice of format. Every download is hashed with SHA-256 — the digest is returned in the X-Sentinel-SHA256 response header, and the CSV bundle also embeds per-file hashes in its README so reviewers can verify integrity months later without going back to the server.",
     bullets: [
       "PDF, DOCX, JSON, or zipped CSV exports",
-      "Full mutation log embedded in JSON exports",
-      "Re-runnable: import the JSON back into a fresh investigation",
+      "SHA-256 manifest on every download (X-Sentinel-SHA256 header)",
+      "Full mutation log embedded in JSON exports — re-runnable on import",
     ]
   }
 ];
