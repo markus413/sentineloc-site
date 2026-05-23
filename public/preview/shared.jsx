@@ -40,7 +40,8 @@ const Brand = ({ size = "md" }) => {
   );
 };
 
-/* Pricing tiers from product */
+/* Pricing tiers — every bullet here ships today. Aspirational
+   features stay off the marketing site until they're real. */
 const PRICING_TIERS = [
   {
     name: "trial", display: "Trial", price: null, per: null, trial: "14d",
@@ -50,7 +51,7 @@ const PRICING_TIERS = [
       "1 operator seat",
       "Up to 3 investigations",
       "Vault Lite (server-side AES-256)",
-      "Community wiki & OSINT toolbox"
+      "Sample case seeded on signup"
     ],
     cta: "Start trial", primary: false, noCheckout: true
   },
@@ -61,7 +62,8 @@ const PRICING_TIERS = [
       "1 operator seat",
       "Unlimited investigations",
       "10 GB Vault Lite encrypted storage",
-      "All transforms + OSINT toolbox",
+      "Wikidata, Wikipedia, and OFAC transforms",
+      "OSINT toolbox + community wiki",
       "PDF / DOCX / JSON / CSV exports",
       "Email support"
     ],
@@ -74,8 +76,8 @@ const PRICING_TIERS = [
       "3 operator seats included",
       "50 GB Vault Lite storage",
       "Map view + geocoded entities",
-      "Composer reports with share links",
-      "Scheduled transform re-runs",
+      "Real-time collaboration + presence",
+      "AI-assisted import (CSV / MD / PDF / Word)",
       "Priority support"
     ],
     cta: "Choose Helios", primary: true, recommended: true
@@ -85,10 +87,10 @@ const PRICING_TIERS = [
     tagline: "Investigative shops and newsrooms.",
     features: [
       "10 operator seats",
-      "250 GB Vault — Lite or Standard (client-side)",
-      "Chain-of-custody manifests on every export",
-      "SSO, audit log, role-based access",
-      "Custom transforms & private toolbox",
+      "250 GB Vault Lite storage",
+      "Vault Standard (zero-knowledge) — ships Q3 2026",
+      "Time-machine: replay an investigation mutation-by-mutation",
+      "Audit log + role-based access",
       "Dedicated operator contact"
     ],
     cta: "Choose Argus", primary: false
@@ -98,23 +100,23 @@ const PRICING_TIERS = [
 const PIPELINE_STEPS = [
   {
     num: "01", key: "search", title: "Search",
-    body: "Type a name, phone, address, handle, or hash. Sentinel routes the query across SDN, court records, breach corpora, Wikidata, and your own vault — and ranks by source confidence."
+    body: "Run any selected node through Wikidata, Wikipedia, or OFAC. Sentinel ranks results by source confidence and previews what would land on the graph before you commit."
   },
   {
     num: "02", key: "graph", title: "Graph",
-    body: "Everything you discover lands as a typed entity: person, org, location, event. Relationships are first-class. Transforms expand any node into its connections without losing provenance."
+    body: "Everything you discover lands as a typed entity — fourteen types from person and org down to vessel, aircraft, and document. Edges are first-class with thirteen relationship semantics and per-property source attribution."
   },
   {
     num: "03", key: "vault", title: "Vault",
-    body: "FOIA returns, screenshots, audio, court PDFs — drop them in. Files are scoped to one investigation, encrypted at rest, and surface in the graph as source material with confidence chips."
+    body: "FOIA returns, screenshots, audio, court PDFs — drop them in. Files are scoped to one investigation, encrypted at rest with AES-256-GCM, and surface in the graph as source material with confidence chips."
   },
   {
     num: "04", key: "compose", title: "Compose",
-    body: "Draft the brief alongside the evidence. Drag any entity, edge, or source into the composer; citations attach automatically. Edit, preview, and version without leaving the canvas."
+    body: "Draft the brief alongside the evidence. Drag any entity, edge, or source into the composer; citations attach automatically. Markdown and rich-text both work, and the draft is encrypted with a per-investigation key."
   },
   {
     num: "05", key: "export", title: "Export",
-    body: "Generate a dossier in PDF, DOCX, JSON, or CSV. Every claim links back to its source. Each export carries a chain-of-custody manifest so reviewers can verify what you saw."
+    body: "Generate a dossier in PDF, DOCX, JSON, or CSV. The JSON export carries the full mutation log for the investigation — every claim, every source, every change, replayable."
   }
 ];
 
@@ -123,37 +125,92 @@ const FEATURES = [
     tag: "Graph",
     title: "A canvas that knows what every node is.",
     body: "Drop entities, draw edges, run transforms. Sentinel keeps the schema honest — every node is typed, every edge is labelled, every datum is sourced. Right-click any entity to fan out connections from public records or your own vault.",
-    bullets: ["Person · Org · Business · Location · Event · Document", "20+ built-in transforms, custom transforms on Argus", "Force-directed, hierarchical, and map layouts"]
+    bullets: [
+      "Fourteen entity types — person, org, business, vessel, aircraft, IP, domain, email, phone, address, document, event, location, custom",
+      "Thirteen edge types with first-class semantics — owns, controls, employed-by, sanctioned-by, family-of, subsidiary-of, located-at, more",
+      "Force-directed and geocoded map layouts",
+    ]
+  },
+  {
+    tag: "AI Imports",
+    title: "Bring your own AI; we wire it to the graph.",
+    body: "Run case notes through Claude, GPT, or Gemini using one of four open-source Research Format prompts. Save the result as Markdown and Sentinel parses it into typed entities and relationships, lets you review every row before commit, and flags every AI-generated item for verification.",
+    bullets: [
+      "Open Sentinel Research Format prompts — General, Person, Corporate, Financial Flow",
+      "Import from CSV, Markdown, PDF, or Word (.docx)",
+      "Per-row review before commit — exclude, rename, retype",
+      "AI-flagged items land in a verification queue you work through later",
+    ]
+  },
+  {
+    tag: "Transforms",
+    title: "Public records, two clicks deep.",
+    body: "Run transforms against any selected node — Wikidata, Wikipedia, OFAC sanctions — and preview what would land on the graph before committing. Keep the chaff out, the signal in.",
+    bullets: [
+      "Preview every transform output before it commits",
+      "Confidence scoring on every returned edge",
+      "Wayback Machine fallback on every source URL",
+    ]
   },
   {
     tag: "OSINT Toolbox",
     title: "Twenty years of investigator tradecraft, indexed.",
     body: "A curated, searchable catalogue of public sources — sanctions lists, corporate registries, archived web, breach-checkers, geolocation utilities. Sentinel keeps it current so you don't have to maintain a bookmark folder.",
-    bullets: ["Categorised by entity type and jurisdiction", "Source-quality ratings from the community", "Submit and review tools alongside other operators"]
-  },
-  {
-    tag: "Transforms",
-    title: "Public records, two clicks deep.",
-    body: "Run OFAC, Wikidata, EDGAR, Companies House, OpenCorporates, and more directly against any selected node. Preview what'll land on the graph before committing — keep the chaff out, the signal in.",
-    bullets: ["Transform preview — accept or reject each result", "Confidence scoring on every returned edge", "Re-runs on a schedule, with diff alerts"]
+    bullets: [
+      "Categorised by entity type and jurisdiction",
+      "Workflow cards — \"start with these tools\" recommendations per case type",
+      "Live search across the whole catalogue",
+    ]
   },
   {
     tag: "Composer",
     title: "Write the brief without leaving the evidence.",
-    body: "A focused editor pinned beneath the canvas. Markdown, headings, citations, images. Drag any entity in to embed a live reference; the citation regenerates on export. Version history is automatic.",
-    bullets: ["Rich text + Markdown + raw HTML modes", "Auto-cite from any graph entity or vault file", "Public read-only share links on Helios and up"]
+    body: "A focused editor pinned beneath the canvas. Drag any entity, edge, or vault file in to embed a live citation that regenerates on export. The same draft lands in every export format — PDF, DOCX, JSON — with the citations intact.",
+    bullets: [
+      "Markdown and rich-text modes",
+      "Auto-cite from any graph entity or vault file",
+      "Investigation-scoped narrative notes for context the graph can't capture",
+    ]
+  },
+  {
+    tag: "Provenance",
+    title: "Every claim, every change, every operator.",
+    body: "Sentinel records the full lineage of an investigation through an append-only mutation log. Roll the graph back to any moment, see who changed what, and verify AI-imported entities through a dedicated review queue before they count as load-bearing facts.",
+    bullets: [
+      "Time-machine — replay an investigation mutation-by-mutation",
+      "Per-property source attribution — not just per-entity",
+      "Verification queue separates AI-generated items from your own work",
+    ]
+  },
+  {
+    tag: "Collaboration",
+    title: "A live canvas without the meeting overhead.",
+    body: "Multiple investigators on one case, working the same canvas in real time. Every edit broadcasts via the mutation log so the next person sees it within a second. A presence panel shows who's active, who's idle, and what they're looking at right now.",
+    bullets: [
+      "Real-time graph + composer sync via WebSocket",
+      "Presence indicators with active / idle state",
+      "Per-investigation history visible in the activity feed",
+    ]
   },
   {
     tag: "Vault Encryption",
     title: "Source material that doesn't leak.",
-    body: "Vault Lite encrypts uploads at rest using AES-256-GCM with a per-user key wrapped under a server-side master key. Vault Standard moves to client-side encryption — we hold no plaintext key, and a lawful order yields ciphertext only.",
-    bullets: ["Lite: server-managed keys — defeats opportunistic disk theft", "Standard: client-side, zero-knowledge keys (Argus)", "Per-investigation scoping, never cross-tenant"]
+    body: "Vault Lite encrypts uploads at rest using AES-256-GCM, with a per-investigation data key wrapped under a server-side master key. Vault Standard — client-side, zero-knowledge — is on the roadmap for Argus, targeting Q3 2026.",
+    bullets: [
+      "Lite (ships today): server-managed keys, AES-256-GCM, KMS-isolated master key",
+      "Per-investigation scoping, never cross-tenant",
+      "Standard (Q3 2026): browser-side WebCrypto with passphrase-derived keys",
+    ]
   },
   {
     tag: "Reports & Custody",
     title: "Every export carries its receipts.",
-    body: "Each dossier ships with a chain-of-custody manifest: which sources ran, when, by which operator, with what confidence. Hand a PDF to legal or an editor and they can trace every claim back to a primary record.",
-    bullets: ["PDF, DOCX, JSON, CSV", "SHA-256 manifest per export", "Re-run any historical export with a single click"]
+    body: "Each dossier ships in your choice of format. The JSON export includes the full mutation log — every entity creation, edge update, and note change for that investigation — so reviewers can trace every claim back to the moment it landed on the graph.",
+    bullets: [
+      "PDF, DOCX, JSON, or zipped CSV exports",
+      "Full mutation log embedded in JSON exports",
+      "Re-runnable: import the JSON back into a fresh investigation",
+    ]
   }
 ];
 
