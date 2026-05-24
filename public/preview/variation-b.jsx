@@ -209,23 +209,24 @@ function VbSecurity() {
       <div className="vb-inner">
         <div className="vb-section-head">
           <div className="vb-section-mark">§ 04 — SECURITY</div>
-          <h2 className="vb-h2">Honest cryptography, in the open.</h2>
+          <h2 className="vb-h2">Two encryption postures. Choose your threat model honestly.</h2>
           <p className="vb-section-lede">
-            Vault Lite ships today and defeats casual disk theft. Vault Standard —
-            client-side, zero-knowledge — is on the roadmap for Argus, targeting
-            Q3 2026. We will not claim it before it ships.
+            We refuse to lie about cryptography. Vault Lite defeats casual disk
+            theft. Vault Standard defeats a court order. Pick the one that matches
+            the work you&apos;re actually doing — and read the threat model so you
+            know what each one does <em>not</em> protect.
           </p>
         </div>
 
         <div className="vb-security">
           <article className="vb-sec-cell">
-            <div className="vb-sec-tag vb-tag-emerald">Vault Lite — ships today</div>
+            <div className="vb-sec-tag vb-tag-emerald">Vault Lite — default</div>
             <h3 className="vb-sec-title">Server-managed keys, AES-256-GCM.</h3>
             <p>
               Per-investigation data keys wrapped under a server-side master key,
               isolated in a dedicated KMS daemon. Files are unreadable on disk.
               We can still produce plaintext if compelled by lawful process — and
-              we'll tell you when we do, where the law allows.
+              we&apos;ll tell you when we do, where the law allows.
             </p>
             <dl className="vb-sec-specs">
               <div><dt>Cipher</dt><dd>AES-256-GCM</dd></div>
@@ -236,21 +237,22 @@ function VbSecurity() {
           </article>
 
           <article className="vb-sec-cell">
-            <div className="vb-sec-tag vb-tag-cyan">Vault Standard — Q3 2026</div>
-            <h3 className="vb-sec-title">Client-side, zero-knowledge. <em>(in development)</em></h3>
+            <div className="vb-sec-tag vb-tag-cyan">Vault Standard — ships today</div>
+            <h3 className="vb-sec-title">Client-side, zero-knowledge.</h3>
             <p>
-              Encryption will run in your browser via WebCrypto. Keys will derive
-              from your passphrase using Argon2id and never leave your device.
-              Sentinel will store ciphertext only — a lawful order will yield opaque
-              bytes, and a lost passphrase will yield the same. Until this ships,
-              Argus tier runs on Vault Lite cryptography with audit-log and
-              role-based-access protections instead.
+              Encryption runs in your browser via WebCrypto. The key derives from
+              your passphrase using Argon2id and never leaves your device.
+              Sentinel stores ciphertext only — a lawful order yields opaque
+              bytes, and a lost passphrase yields the same. Convert any
+              investigation to Vault Standard in one click from the right panel;
+              we walk you through passphrase setup and a one-time printed
+              recovery code.
             </p>
             <dl className="vb-sec-specs">
               <div><dt>Cipher</dt><dd>AES-256-GCM in WebCrypto</dd></div>
               <div><dt>KDF</dt><dd>Argon2id (m=64MB, t=3)</dd></div>
-              <div><dt>Recovery</dt><dd>printed recovery code (M-of-N shards later)</dd></div>
-              <div><dt>Status</dt><dd>roadmap — Q3 2026 on Argus</dd></div>
+              <div><dt>Recovery</dt><dd>256-bit printed code (M-of-N shards later)</dd></div>
+              <div><dt>Tiers</dt><dd>Argus only</dd></div>
             </dl>
           </article>
         </div>

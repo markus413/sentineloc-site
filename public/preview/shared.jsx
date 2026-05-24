@@ -88,7 +88,7 @@ const PRICING_TIERS = [
     features: [
       "10 operator seats",
       "250 GB Vault Lite storage",
-      "Vault Standard (zero-knowledge) — ships Q3 2026",
+      "Vault Standard (zero-knowledge, client-side encryption)",
       "Time-machine: replay an investigation mutation-by-mutation",
       "Audit log + role-based access",
       "Dedicated operator contact"
@@ -195,11 +195,11 @@ const FEATURES = [
   {
     tag: "Vault Encryption",
     title: "Source material that doesn't leak.",
-    body: "Vault Lite encrypts uploads at rest using AES-256-GCM, with a per-investigation data key wrapped under a server-side master key. Vault Standard — client-side, zero-knowledge — is on the roadmap for Argus, targeting Q3 2026.",
+    body: "Vault Lite encrypts uploads at rest using AES-256-GCM with server-managed keys. Vault Standard (Argus tier) moves the encryption into your browser via WebCrypto + Argon2id — Sentinel stores ciphertext only and never sees your passphrase. Drafts, images, and vault file uploads are all end-to-end on Standard.",
     bullets: [
-      "Lite (ships today): server-managed keys, AES-256-GCM, KMS-isolated master key",
-      "Per-investigation scoping, never cross-tenant",
-      "Standard (Q3 2026): browser-side WebCrypto with passphrase-derived keys",
+      "Lite: server-managed keys, AES-256-GCM, KMS-isolated master key — defeats casual disk theft",
+      "Standard: browser-side WebCrypto with Argon2id passphrase-derived keys — defeats a lawful order",
+      "Per-investigation scoping; one passphrase per case; printed recovery code",
     ]
   },
   {
