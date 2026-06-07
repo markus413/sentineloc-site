@@ -30,6 +30,7 @@ export default function BetaPage() {
       <MinimalHeader />
       <main className="flex-1">
         <Hero />
+        <ProductShot />
         <Prose />
         <SignUpCTA />
       </main>
@@ -101,6 +102,32 @@ function Hero() {
           CURRENTLY IN PRIVATE BETA
         </h4>
       </div>
+    </section>
+  );
+}
+
+// ─── Product shot ──────────────────────────────────────────────────
+// A real screenshot of the investigation workspace, framed and pulled
+// up slightly under the hero so the page shows the product before it
+// describes it. Plain <img> (not next/image) — the site is a static
+// export, so an unoptimized tag avoids the image-loader config dance.
+function ProductShot() {
+  return (
+    <section className="max-w-5xl mx-auto px-6 -mt-2 pb-4">
+      <figure>
+        <div className="rounded-lg overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50 bg-[#06090f]">
+          <img
+            src="/product-investigation.png"
+            alt="Sentinel investigation workspace — entity graph, multi-source search, and a cited composer in one canvas"
+            width={1826}
+            height={909}
+            className="w-full h-auto block"
+          />
+        </div>
+        <figcaption className="mt-3 text-center text-[11px] tracking-[0.25em] text-slate-500 font-sans">
+          ENTITY GRAPH · MULTI-SOURCE SEARCH · CITED COMPOSER — ONE CANVAS
+        </figcaption>
+      </figure>
     </section>
   );
 }
