@@ -13,6 +13,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import SeatsRemaining from "../components/SeatsRemaining";
 
 export const metadata: Metadata = {
   title: "Sentinel OC — Private Beta",
@@ -96,7 +97,7 @@ function Hero() {
         {/* Issue 6: the pitch's three-beat line, promoted to the subhead —
             it tells the target reader exactly what pain dies. */}
         <p className="mt-6 text-xl md:text-2xl text-slate-100 font-medium max-w-2xl mx-auto leading-relaxed font-sans">
-          Every claim cited. Every source archived. Every action logged.
+          Every claim cited. Every source archived.
         </p>
         <p className="mt-4 text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed font-sans">
           Investigative workspace for journalists and researchers.
@@ -257,13 +258,10 @@ function SignUpCTA() {
   return (
     <section className="max-w-2xl mx-auto px-6 pb-24 font-sans">
       <SectionHeading>Beta access sign-up</SectionHeading>
-      {/* Issue 4: concrete scarcity. The cap is enforced in the app's
-          signup settings (currently 18, adjustable there). NOTE: this
-          number is hardcoded — the static marketing site can't read the
-          app setting, so if the cap changes, update this line to match. */}
-      <p className="text-slate-300 text-base md:text-lg leading-relaxed">
-        Group 1 is capped at 18 seats.
-      </p>
+      {/* Issue 4: concrete scarcity, tied to Settings. Live group + seats-
+          remaining read from the SOC signup config (db.sentineloc.io);
+          client-fetched (static site) with an honest fallback. */}
+      <SeatsRemaining className="text-slate-300 text-base md:text-lg leading-relaxed" />
       <div className="mt-8 flex flex-col sm:flex-row gap-4">
         <a
           href={SIGNUP_URL}
