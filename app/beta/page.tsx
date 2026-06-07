@@ -257,9 +257,12 @@ function SignUpCTA() {
   return (
     <section className="max-w-2xl mx-auto px-6 pb-24 font-sans">
       <SectionHeading>Beta access sign-up</SectionHeading>
+      {/* Issue 4: concrete scarcity. The cap is enforced in the app's
+          signup settings (currently 18, adjustable there). NOTE: this
+          number is hardcoded — the static marketing site can't read the
+          app setting, so if the cap changes, update this line to match. */}
       <p className="text-slate-300 text-base md:text-lg leading-relaxed">
-        Beta groups are limited so this link will only be available
-        for a limited time.
+        Group 1 is capped at 18 seats.
       </p>
       <div className="mt-8 flex flex-col sm:flex-row gap-4">
         <a
