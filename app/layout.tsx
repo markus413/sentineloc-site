@@ -30,6 +30,15 @@ export default function RootLayout({
       className={`${plexMono.variable} ${plexSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#06090f] text-slate-200 font-mono">
+        {/* Cookieless, self-hosted Umami — public marketing surfaces (all
+            pages under this layout: /, /beta, /features, /pricing, etc.).
+            Same website as the SOC app's public pages. No consent banner
+            needed (Umami sets no cookies). React 19 hoists this script. */}
+        <script
+          defer
+          src="https://analytics.sentineloc.io/script.js"
+          data-website-id="f0eb201a-ca6f-49f4-89c8-2eeebeba95b0"
+        />
         {children}
       </body>
     </html>
