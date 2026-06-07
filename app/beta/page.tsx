@@ -93,7 +93,12 @@ function Hero() {
         <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight">
           Sentinel
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-sans">
+        {/* Issue 6: the pitch's three-beat line, promoted to the subhead —
+            it tells the target reader exactly what pain dies. */}
+        <p className="mt-6 text-xl md:text-2xl text-slate-100 font-medium max-w-2xl mx-auto leading-relaxed font-sans">
+          Every claim cited. Every source archived. Every action logged.
+        </p>
+        <p className="mt-4 text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed font-sans">
           Investigative workspace for journalists and researchers.
         </p>
         {/* "Currently in private beta" — required H4 in red. The pill
@@ -117,15 +122,16 @@ function ProductShot() {
       <figure>
         <div className="rounded-lg overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50 bg-[#06090f]">
           <img
-            src="/product-investigation.png"
+            src="/product-investigation.jpg"
             alt="Sentinel investigation workspace — entity graph, multi-source search, and a cited composer in one canvas"
             width={1826}
             height={909}
             className="w-full h-auto block"
           />
         </div>
-        <figcaption className="mt-3 text-center text-[11px] tracking-[0.25em] text-slate-500 font-sans">
-          ENTITY GRAPH · MULTI-SOURCE SEARCH · CITED COMPOSER — ONE CANVAS
+        <figcaption className="mt-3 text-center text-xs text-slate-500 font-sans leading-relaxed">
+          The investigation canvas — entities and relationships mapped, open
+          sources searched, and every claim cited in the composer.
         </figcaption>
       </figure>
     </section>
@@ -141,13 +147,12 @@ function Prose() {
     <section className="max-w-2xl mx-auto px-6 py-16 font-sans text-slate-300 leading-relaxed text-base md:text-lg">
       <SectionHeading>What is Sentinel OC?</SectionHeading>
       <p>
-        Sentinel is an investigative workspace built for the way
-        professional investigations actually works.
+        Sentinel OC is a workspace built to streamline the process from
+        deep investigation to finalized report.
       </p>
       <p className="mt-5">
         Track entities, relationships, and evidence in a structured
-        environment. Every claim cited. Every source archived. Every
-        action logged.
+        environment.
       </p>
       <p className="mt-5">
         Built with source security as a foundational principle, not an
@@ -160,27 +165,29 @@ function Prose() {
         information.
       </p>
 
-      <SectionHeading>Why beta?</SectionHeading>
-      <p>
-        Sentinel is mature enough to do real work, but the public
-        launch isn&rsquo;t until later this year. The beta period lets
-        a small group of professionals test the product in real
-        working conditions and shape it before launch.
-      </p>
-      <p className="mt-5">Beta testers help identify:</p>
-      <ProseList items={[
-        "What works in real investigative workflows",
-        "What's confusing or missing",
-        "What features matter most to professional users",
-        "Where the product needs refinement before public release",
-      ]} />
-
+      {/* Issue 5: give-before-ask — what testers receive comes first,
+          then what we're hoping they'll help us identify. */}
       <SectionHeading>What beta testers receive</SectionHeading>
       <ProseList items={[
         "Free access during the 4-week beta period",
         "Direct line to the founder for feedback and questions",
         "50% off the first year if you choose to continue after beta",
         "A say in the product before it's locked in for public launch",
+      ]} />
+
+      <SectionHeading>What we&rsquo;re hoping you&rsquo;ll help us identify</SectionHeading>
+      <p>
+        Sentinel is mature enough to do real work, but the public
+        launch isn&rsquo;t until later this year. The beta period lets
+        a small group of professionals test the product in real
+        working conditions and shape it before launch.
+      </p>
+      <p className="mt-5">You can help us pin down:</p>
+      <ProseList items={[
+        "What works in real investigative workflows",
+        "What's confusing or missing",
+        "What features matter most to professional users",
+        "Where the product needs refinement before public release",
       ]} />
 
       <SectionHeading>How much time does it take?</SectionHeading>
