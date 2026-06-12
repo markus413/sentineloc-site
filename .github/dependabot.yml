@@ -1,0 +1,16 @@
+# Dependabot — weekly dependency + GitHub Actions update PRs.
+# NOTE: security-only out-of-band CVE PRs also require the repo's
+# Settings -> Code security -> "Dependabot security updates" toggle ON.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels: ["dependencies"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
