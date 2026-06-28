@@ -48,7 +48,7 @@ function MinimalHeader() {
     <header className="border-b border-white/[0.06] bg-[#06090f]/95 sticky top-0 z-40 backdrop-blur">
       <div className="max-w-4xl mx-auto px-6 py-4 flex items-center">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
+          <img src="/sentinel-oc-helmet.jpg" alt="Sentinel OC" className="h-12 w-auto" />
           <span className="text-sm tracking-[0.3em] font-bold text-white">
             SENTINEL<span className="text-sky-400">:</span>OC
           </span>
