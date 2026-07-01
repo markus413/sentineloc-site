@@ -36,8 +36,9 @@ export default function RootLayout({
             needed (Umami sets no cookies). React 19 hoists this script. */}
         <script
           defer
-          src="https://analytics.sentineloc.io/script.js"
+          src="/o/o.js"
           data-website-id="f0eb201a-ca6f-49f4-89c8-2eeebeba95b0"
+          data-host-url="/o"
         />
         {children}
       </body>
